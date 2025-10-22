@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "lun",
+      "camelcase": "Lun",
+      "title": "Lun",
+      "scope": "source.lun",
+      "file-types": [
+        "lun"
+      ],
+      "injection-regex": "^lun$",
+      "class-name": "TreeSitterLun"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Lun grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Thibault V.",
+        "email": "th1bault.vincent@proton.me"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/lunprog/tree-sitter-lun"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
