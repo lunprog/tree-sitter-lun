@@ -159,6 +159,7 @@ module.exports = grammar({
       $.if_expr,
       $.block_expr,
       $.while_expr,
+      $.for_expr,
       $.loop_expr,
       $.fun_expr,
     ),
@@ -200,6 +201,7 @@ module.exports = grammar({
       $.null_expr,
       $.field_expr,
       $.ptr_type_expr,
+      $.funptr_type_expr,
     ),
 
     bool_expr: _ => choice(
@@ -364,7 +366,7 @@ module.exports = grammar({
       prec(-1, seq(
         'fun',
         '(',
-        field('args', fun_args($.fun_arg)),
+        field('args', fun_args($._typeexpr)),
         ')',
         field('ret_typeexpr', optional(seq('->', $._typeexpr))),
       )),
@@ -374,6 +376,15 @@ module.exports = grammar({
       '*',
       optional($.mut_spec),
       $._typeexpr,
+    ),
+
+    funptr_type_expr: $ => seq(
+      '*',
+      'fun',
+      '(',
+      field('args', fun_args($._typeexpr)),
+      ')',
+      field('ret_typeexpr', optional(seq('->', $._typeexpr))),
     ),
 
     // STATEMENT parsing
