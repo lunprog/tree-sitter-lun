@@ -57,10 +57,15 @@ module.exports = grammar({
   ],
 
   rules: {
-    source_file: $ => repeat($._item),
+    orb: $ => repeat($._item),
+
+    // ITEM parsing
 
     _item: $ => choice(
       $.global_def_item,
+      $.global_uninit_item,
+      $.extern_block_item,
+      $._directive,
     ),
 
     global_def_item: $ => seq(
@@ -73,6 +78,45 @@ module.exports = grammar({
         seq(field('value', $._expr_with_block), optional(';')),
       )
     ),
+
+    global_uninit_item: $ => seq(
+      field('name', $.identifier),
+      ':',
+      field('typeexpr', $._typeexpr),
+      ';',
+    ),
+
+    extern_block_item: $ => seq(
+      'extern',
+      $.string_lit,
+      '{',
+      repeat($._item),
+      '}',
+    ),
+
+    // DIRECTIVE parsing
+
+    _directive: $ => choice(
+      $.mod_directive,
+      $.import_directive,
+    ),
+
+    mod_directive: $ => seq(
+      '#',
+      'mod',
+      $.identifier,
+      ';',
+    ),
+
+    import_directive: $ => seq(
+      '#',
+      'import',
+      $.path,
+      field('alias', optional(seq('as', $.identifier))),
+      ';',
+    ),
+
+    // TYPEEXPR parsing
 
     _typeexpr: $ => prec.left(PREC.logor, choice(
       $._expr_with_block_no_label,
@@ -104,7 +148,7 @@ module.exports = grammar({
       'void',
     ),
 
-    mut_spec: _ => "mut",
+    // EXPRESSION parsing
 
     _expression: $ => choice(
       $._expr_with_block,
@@ -174,7 +218,7 @@ module.exports = grammar({
     path_expr: $ => $.path,
 
     path: $ => prec(PREC.primary, seq(
-      choice('orb', field('first_seg', $.identifier)),
+      choice('orb', field('seg', $.identifier)),
       repeat(seq(token('::'), field('seg', $.identifier))),
     )),
 
@@ -332,6 +376,8 @@ module.exports = grammar({
       $._typeexpr,
     ),
 
+    // STATEMENT parsing
+
     block: $ => seq(
       '{',
       field('stmt', repeat($._statement)),
@@ -374,6 +420,8 @@ module.exports = grammar({
       'defer',
       $._expr_stmt,
     ),
+
+    // TOKEN lexing
 
     // http://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment/36328890#36328890
     comment: _ => token(choice(
@@ -431,6 +479,7 @@ module.exports = grammar({
       ),
     )),
 
+    mut_spec: _ => "mut",
 
     identifier: _ => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
   }
