@@ -401,6 +401,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "for_expr"
+        },
+        {
+          "type": "SYMBOL",
           "name": "loop_expr"
         },
         {
@@ -539,6 +543,10 @@
         {
           "type": "SYMBOL",
           "name": "ptr_type_expr"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "funptr_type_expr"
         }
       ]
     },
@@ -1715,7 +1723,7 @@
                               "members": [
                                 {
                                   "type": "SYMBOL",
-                                  "name": "fun_arg"
+                                  "name": "_typeexpr"
                                 }
                               ]
                             },
@@ -1733,7 +1741,7 @@
                                     "members": [
                                       {
                                         "type": "SYMBOL",
-                                        "name": "fun_arg"
+                                        "name": "_typeexpr"
                                       }
                                     ]
                                   }
@@ -1818,6 +1826,116 @@
         {
           "type": "SYMBOL",
           "name": "_typeexpr"
+        }
+      ]
+    },
+    "funptr_type_expr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": "fun"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "args",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_typeexpr"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "REPEAT",
+                        "content": {
+                          "type": "SEQ",
+                          "members": [
+                            {
+                              "type": "STRING",
+                              "value": ","
+                            },
+                            {
+                              "type": "SEQ",
+                              "members": [
+                                {
+                                  "type": "SYMBOL",
+                                  "name": "_typeexpr"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": ","
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "FIELD",
+          "name": "ret_typeexpr",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "->"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_typeexpr"
+                  }
+                ]
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         }
       ]
     },
@@ -2138,11 +2256,23 @@
               },
               {
                 "type": "PATTERN",
+                "value": "0B[01_]+"
+              },
+              {
+                "type": "PATTERN",
                 "value": "0o[0-7_]+"
               },
               {
                 "type": "PATTERN",
-                "value": "0x[0-9a-fA-F]+"
+                "value": "0O[0-7_]+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "0x[0-9a-fA-F_]+"
+              },
+              {
+                "type": "PATTERN",
+                "value": "0X[0-9a-fA-F_]+"
               }
             ]
           },

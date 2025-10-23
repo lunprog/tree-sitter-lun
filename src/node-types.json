@@ -44,7 +44,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -138,7 +146,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -238,7 +254,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -410,7 +434,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -510,7 +542,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -612,7 +652,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -741,7 +789,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -855,7 +911,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -954,7 +1018,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -1063,7 +1135,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -1194,7 +1274,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -1339,7 +1427,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -1448,7 +1544,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -1568,7 +1672,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -1636,7 +1748,103 @@
             "named": false
           },
           {
+            "type": "assign_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "block_expr",
+            "named": true
+          },
+          {
+            "type": "bool_expr",
+            "named": true
+          },
+          {
+            "type": "borrow_expr",
+            "named": true
+          },
+          {
+            "type": "break_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "continue_expr",
+            "named": true
+          },
+          {
+            "type": "field_expr",
+            "named": true
+          },
+          {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_arg",
+            "named": true
+          },
+          {
+            "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "left_unary_expr",
+            "named": true
+          },
+          {
+            "type": "lit_expr",
+            "named": true
+          },
+          {
+            "type": "loop_expr",
+            "named": true
+          },
+          {
+            "type": "null_expr",
+            "named": true
+          },
+          {
+            "type": "paren_expr",
+            "named": true
+          },
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ptr_type_expr",
+            "named": true
+          },
+          {
+            "type": "return_expr",
+            "named": true
+          },
+          {
+            "type": "right_unary_expr",
+            "named": true
+          },
+          {
+            "type": "while_expr",
             "named": true
           }
         ]
@@ -1696,7 +1904,233 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "left_unary_expr",
+            "named": true
+          },
+          {
+            "type": "lit_expr",
+            "named": true
+          },
+          {
+            "type": "loop_expr",
+            "named": true
+          },
+          {
+            "type": "null_expr",
+            "named": true
+          },
+          {
+            "type": "paren_expr",
+            "named": true
+          },
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ptr_type_expr",
+            "named": true
+          },
+          {
+            "type": "return_expr",
+            "named": true
+          },
+          {
+            "type": "right_unary_expr",
+            "named": true
+          },
+          {
+            "type": "while_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "funptr_type_expr",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "assign_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "block_expr",
+            "named": true
+          },
+          {
+            "type": "bool_expr",
+            "named": true
+          },
+          {
+            "type": "borrow_expr",
+            "named": true
+          },
+          {
+            "type": "break_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "continue_expr",
+            "named": true
+          },
+          {
+            "type": "field_expr",
+            "named": true
+          },
+          {
+            "type": "for_expr",
+            "named": true
+          },
+          {
+            "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "left_unary_expr",
+            "named": true
+          },
+          {
+            "type": "lit_expr",
+            "named": true
+          },
+          {
+            "type": "loop_expr",
+            "named": true
+          },
+          {
+            "type": "null_expr",
+            "named": true
+          },
+          {
+            "type": "paren_expr",
+            "named": true
+          },
+          {
+            "type": "path_expr",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "ptr_type_expr",
+            "named": true
+          },
+          {
+            "type": "return_expr",
+            "named": true
+          },
+          {
+            "type": "right_unary_expr",
+            "named": true
+          },
+          {
+            "type": "while_expr",
+            "named": true
+          }
+        ]
+      },
+      "ret_typeexpr": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": "assign_expr",
+            "named": true
+          },
+          {
+            "type": "binary_expr",
+            "named": true
+          },
+          {
+            "type": "block_expr",
+            "named": true
+          },
+          {
+            "type": "bool_expr",
+            "named": true
+          },
+          {
+            "type": "borrow_expr",
+            "named": true
+          },
+          {
+            "type": "break_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "continue_expr",
+            "named": true
+          },
+          {
+            "type": "field_expr",
+            "named": true
+          },
+          {
+            "type": "for_expr",
+            "named": true
+          },
+          {
+            "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -1806,7 +2240,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -1900,7 +2342,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -2010,7 +2460,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -2110,7 +2568,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -2321,7 +2787,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -2434,7 +2908,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -2528,7 +3010,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -2732,7 +3222,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -2867,7 +3365,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -2970,7 +3476,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -3080,7 +3594,15 @@
           "named": true
         },
         {
+          "type": "for_expr",
+          "named": true
+        },
+        {
           "type": "fun_expr",
+          "named": true
+        },
+        {
+          "type": "funptr_type_expr",
           "named": true
         },
         {
@@ -3189,7 +3711,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -3287,7 +3817,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -3437,7 +3975,15 @@
             "named": true
           },
           {
+            "type": "for_expr",
+            "named": true
+          },
+          {
             "type": "fun_expr",
+            "named": true
+          },
+          {
+            "type": "funptr_type_expr",
             "named": true
           },
           {
