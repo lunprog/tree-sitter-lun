@@ -1,5 +1,227 @@
 [
   {
+    "type": "_directive",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "import_directive",
+        "named": true
+      },
+      {
+        "type": "mod_directive",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_expr_without_block",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "assign_expr",
+        "named": true
+      },
+      {
+        "type": "binary_expr",
+        "named": true
+      },
+      {
+        "type": "bool_expr",
+        "named": true
+      },
+      {
+        "type": "borrow_expr",
+        "named": true
+      },
+      {
+        "type": "break_expr",
+        "named": true
+      },
+      {
+        "type": "call_expr",
+        "named": true
+      },
+      {
+        "type": "continue_expr",
+        "named": true
+      },
+      {
+        "type": "field_expr",
+        "named": true
+      },
+      {
+        "type": "funptr_type_expr",
+        "named": true
+      },
+      {
+        "type": "left_unary_expr",
+        "named": true
+      },
+      {
+        "type": "lit_expr",
+        "named": true
+      },
+      {
+        "type": "null_expr",
+        "named": true
+      },
+      {
+        "type": "paren_expr",
+        "named": true
+      },
+      {
+        "type": "path_expr",
+        "named": true
+      },
+      {
+        "type": "ptr_type_expr",
+        "named": true
+      },
+      {
+        "type": "return_expr",
+        "named": true
+      },
+      {
+        "type": "right_unary_expr",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_expression",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "_expr_without_block",
+        "named": true
+      },
+      {
+        "type": "block_expr",
+        "named": true
+      },
+      {
+        "type": "for_expr",
+        "named": true
+      },
+      {
+        "type": "fun_expr",
+        "named": true
+      },
+      {
+        "type": "if_expr",
+        "named": true
+      },
+      {
+        "type": "labeled_expr",
+        "named": true
+      },
+      {
+        "type": "loop_expr",
+        "named": true
+      },
+      {
+        "type": "while_expr",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_float_lit",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "decimal_float_lit",
+        "named": true
+      },
+      {
+        "type": "hex_float_lit",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_item",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "_directive",
+        "named": true
+      },
+      {
+        "type": "extern_block_item",
+        "named": true
+      },
+      {
+        "type": "global_def_item",
+        "named": true
+      },
+      {
+        "type": "global_uninit_item",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_literal",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "_float_lit",
+        "named": true
+      },
+      {
+        "type": "char_lit",
+        "named": true
+      },
+      {
+        "type": "integer_lit",
+        "named": true
+      },
+      {
+        "type": "string_lit",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_typeexpr",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "_expr_without_block",
+        "named": true
+      },
+      {
+        "type": "block_expr",
+        "named": true
+      },
+      {
+        "type": "for_expr",
+        "named": true
+      },
+      {
+        "type": "fun_expr",
+        "named": true
+      },
+      {
+        "type": "if_expr",
+        "named": true
+      },
+      {
+        "type": "loop_expr",
+        "named": true
+      },
+      {
+        "type": "primitive_type",
+        "named": true
+      },
+      {
+        "type": "while_expr",
+        "named": true
+      }
+    ]
+  },
+  {
     "type": "assign_expr",
     "named": true,
     "fields": {
@@ -8,99 +230,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -110,99 +240,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -218,99 +256,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -398,99 +344,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -506,99 +360,7 @@
         "required": false,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -612,11 +374,7 @@
             "named": false
           },
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
+            "type": "_expr_without_block",
             "named": true
           },
           {
@@ -624,31 +382,7 @@
             "named": true
           },
           {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
             "type": "defer_stmt",
-            "named": true
-          },
-          {
-            "type": "field_expr",
             "named": true
           },
           {
@@ -660,10 +394,6 @@
             "named": true
           },
           {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
             "type": "if_expr",
             "named": true
           },
@@ -672,43 +402,11 @@
             "named": true
           },
           {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
             "type": "let_binding_stmt",
             "named": true
           },
           {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
             "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
             "named": true
           },
           {
@@ -722,6 +420,12 @@
         ]
       }
     }
+  },
+  {
+    "type": "block_comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
   },
   {
     "type": "block_expr",
@@ -753,103 +457,11 @@
       "required": true,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
+          "type": "_expression",
           "named": true
         },
         {
           "type": "mut_spec",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
           "named": true
         }
       ]
@@ -875,99 +487,7 @@
       "required": false,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
+          "type": "_expression",
           "named": true
         }
       ]
@@ -982,99 +502,7 @@
       "required": false,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
+          "type": "_expression",
           "named": true
         }
       ]
@@ -1099,99 +527,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -1238,39 +574,11 @@
       "required": true,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
+          "type": "_expr_without_block",
           "named": true
         },
         {
           "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
           "named": true
         },
         {
@@ -1282,10 +590,6 @@
           "named": true
         },
         {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
           "type": "if_expr",
           "named": true
         },
@@ -1294,39 +598,7 @@
           "named": true
         },
         {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
           "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
           "named": true
         },
         {
@@ -1345,23 +617,7 @@
       "required": true,
       "types": [
         {
-          "type": "extern_block_item",
-          "named": true
-        },
-        {
-          "type": "global_def_item",
-          "named": true
-        },
-        {
-          "type": "global_uninit_item",
-          "named": true
-        },
-        {
-          "type": "import_directive",
-          "named": true
-        },
-        {
-          "type": "mod_directive",
+          "type": "_item",
           "named": true
         },
         {
@@ -1380,7 +636,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "field_identifier",
             "named": true
           }
         ]
@@ -1391,99 +647,7 @@
       "required": true,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
+          "type": "_expression",
           "named": true
         }
       ]
@@ -1508,99 +672,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -1636,99 +708,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -1748,103 +728,11 @@
             "named": false
           },
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
+            "type": "_typeexpr",
             "named": true
           },
           {
             "type": "fun_arg",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
             "named": true
           }
         ]
@@ -1868,99 +756,7 @@
             "named": false
           },
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -1980,99 +776,7 @@
             "named": false
           },
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -2086,99 +790,7 @@
             "named": false
           },
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -2204,99 +816,7 @@
         "required": false,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -2306,39 +826,11 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
+            "type": "_expr_without_block",
             "named": true
           },
           {
             "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
             "named": true
           },
           {
@@ -2347,10 +839,6 @@
           },
           {
             "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
             "named": true
           },
           {
@@ -2362,39 +850,7 @@
             "named": true
           },
           {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
             "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
             "named": true
           },
           {
@@ -2424,99 +880,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -2532,99 +896,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -2751,99 +1023,7 @@
       "required": true,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
+          "type": "_expression",
           "named": true
         }
       ]
@@ -2872,99 +1052,7 @@
             "named": false
           },
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -2974,99 +1062,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -3084,6 +1080,12 @@
     }
   },
   {
+    "type": "line_comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
+  },
+  {
     "type": "lit_expr",
     "named": true,
     "fields": {},
@@ -3092,23 +1094,7 @@
       "required": true,
       "types": [
         {
-          "type": "char_lit",
-          "named": true
-        },
-        {
-          "type": "decimal_float_lit",
-          "named": true
-        },
-        {
-          "type": "hex_float_lit",
-          "named": true
-        },
-        {
-          "type": "integer_lit",
-          "named": true
-        },
-        {
-          "type": "string_lit",
+          "type": "_literal",
           "named": true
         }
       ]
@@ -3155,23 +1141,7 @@
       "required": false,
       "types": [
         {
-          "type": "extern_block_item",
-          "named": true
-        },
-        {
-          "type": "global_def_item",
-          "named": true
-        },
-        {
-          "type": "global_uninit_item",
-          "named": true
-        },
-        {
-          "type": "import_directive",
-          "named": true
-        },
-        {
-          "type": "mod_directive",
+          "type": "_item",
           "named": true
         }
       ]
@@ -3186,99 +1156,7 @@
       "required": true,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
+          "type": "_expression",
           "named": true
         }
       ]
@@ -3329,103 +1207,11 @@
       "required": true,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
+          "type": "_typeexpr",
           "named": true
         },
         {
           "type": "mut_spec",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
           "named": true
         }
       ]
@@ -3440,99 +1226,7 @@
       "required": false,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
+          "type": "_expression",
           "named": true
         }
       ]
@@ -3558,99 +1252,7 @@
       "required": true,
       "types": [
         {
-          "type": "assign_expr",
-          "named": true
-        },
-        {
-          "type": "binary_expr",
-          "named": true
-        },
-        {
-          "type": "block_expr",
-          "named": true
-        },
-        {
-          "type": "bool_expr",
-          "named": true
-        },
-        {
-          "type": "borrow_expr",
-          "named": true
-        },
-        {
-          "type": "break_expr",
-          "named": true
-        },
-        {
-          "type": "call_expr",
-          "named": true
-        },
-        {
-          "type": "continue_expr",
-          "named": true
-        },
-        {
-          "type": "field_expr",
-          "named": true
-        },
-        {
-          "type": "for_expr",
-          "named": true
-        },
-        {
-          "type": "fun_expr",
-          "named": true
-        },
-        {
-          "type": "funptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "if_expr",
-          "named": true
-        },
-        {
-          "type": "labeled_expr",
-          "named": true
-        },
-        {
-          "type": "left_unary_expr",
-          "named": true
-        },
-        {
-          "type": "lit_expr",
-          "named": true
-        },
-        {
-          "type": "loop_expr",
-          "named": true
-        },
-        {
-          "type": "null_expr",
-          "named": true
-        },
-        {
-          "type": "paren_expr",
-          "named": true
-        },
-        {
-          "type": "path_expr",
-          "named": true
-        },
-        {
-          "type": "ptr_type_expr",
-          "named": true
-        },
-        {
-          "type": "return_expr",
-          "named": true
-        },
-        {
-          "type": "right_unary_expr",
-          "named": true
-        },
-        {
-          "type": "while_expr",
+          "type": "_expression",
           "named": true
         }
       ]
@@ -3675,99 +1277,7 @@
         "required": false,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_typeexpr",
             "named": true
           }
         ]
@@ -3781,39 +1291,11 @@
             "named": false
           },
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
+            "type": "_expr_without_block",
             "named": true
           },
           {
             "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
             "named": true
           },
           {
@@ -3825,10 +1307,6 @@
             "named": true
           },
           {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
             "type": "if_expr",
             "named": true
           },
@@ -3837,39 +1315,7 @@
             "named": true
           },
           {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
             "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
             "named": true
           },
           {
@@ -3939,99 +1385,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_expr",
-            "named": true
-          },
-          {
-            "type": "binary_expr",
-            "named": true
-          },
-          {
-            "type": "block_expr",
-            "named": true
-          },
-          {
-            "type": "bool_expr",
-            "named": true
-          },
-          {
-            "type": "borrow_expr",
-            "named": true
-          },
-          {
-            "type": "break_expr",
-            "named": true
-          },
-          {
-            "type": "call_expr",
-            "named": true
-          },
-          {
-            "type": "continue_expr",
-            "named": true
-          },
-          {
-            "type": "field_expr",
-            "named": true
-          },
-          {
-            "type": "for_expr",
-            "named": true
-          },
-          {
-            "type": "fun_expr",
-            "named": true
-          },
-          {
-            "type": "funptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "if_expr",
-            "named": true
-          },
-          {
-            "type": "labeled_expr",
-            "named": true
-          },
-          {
-            "type": "left_unary_expr",
-            "named": true
-          },
-          {
-            "type": "lit_expr",
-            "named": true
-          },
-          {
-            "type": "loop_expr",
-            "named": true
-          },
-          {
-            "type": "null_expr",
-            "named": true
-          },
-          {
-            "type": "paren_expr",
-            "named": true
-          },
-          {
-            "type": "path_expr",
-            "named": true
-          },
-          {
-            "type": "ptr_type_expr",
-            "named": true
-          },
-          {
-            "type": "return_expr",
-            "named": true
-          },
-          {
-            "type": "right_unary_expr",
-            "named": true
-          },
-          {
-            "type": "while_expr",
+            "type": "_expression",
             "named": true
           }
         ]
@@ -4107,6 +1461,14 @@
     "named": false
   },
   {
+    "type": "/*",
+    "named": false
+  },
+  {
+    "type": "//",
+    "named": false
+  },
+  {
     "type": ":",
     "named": false
   },
@@ -4171,11 +1533,6 @@
     "named": false
   },
   {
-    "type": "comment",
-    "named": true,
-    "extra": true
-  },
-  {
     "type": "continue",
     "named": false
   },
@@ -4218,6 +1575,10 @@
   {
     "type": "false",
     "named": false
+  },
+  {
+    "type": "field_identifier",
+    "named": true
   },
   {
     "type": "for",
