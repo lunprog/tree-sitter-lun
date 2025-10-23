@@ -4,6 +4,36 @@ Lun grammar for [tree-sitter].
 
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter
 
+## Add lun to [Helix]
+
+*Based on the [documentation of helix].*
+
+- Add the following in `languages.toml`:
+```toml
+[[language]]
+name = "lun"
+scope = "source.lun"
+file-types = ["lun"]
+comment-tokens = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = "    "}
+
+[[grammar]]
+name = "lun"
+source = { git = "https://github.com/lunprog/tree-sitter-lun", rev = "HEAD" }
+# NOTE: instead of using HEAD, you may want to use a commit as rev or a tag.
+```
+
+- Copy the `queries/highlights.scm` file to `runtime/queries/lun/highlights.scm`
+- Run `hx --grammar fetch` and `hx --grammar build`, it will fetch and build
+  every grammar there is listed in your helix config and so the Lun grammar
+  as well.
+- Restart any helix instance (that was open before doing all that) you want the
+  Lun grammar to function
+
+[Helix]: https://helix-editor.com
+[documentation of helix]: https://docs.helix-editor.com/languages.html
+
 ## Versions
 
 Version of this package follows the [semver] convention. Tho the version of this
