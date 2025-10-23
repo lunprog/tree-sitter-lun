@@ -1,0 +1,43 @@
+==================
+Global uninit item
+==================
+
+a : usz;
+
+---
+
+(orb
+  (global_uninit_item
+    (identifier)
+    (primitive_type)))
+
+=================
+Extern block item
+=================
+
+extern "C" {
+  stdout : *mut c_char;
+
+  puts :: fun(*c_char);
+}
+
+---
+
+(orb
+  (extern_block_item
+    (string_lit
+      (string_content))
+    (global_uninit_item
+      (identifier)
+      (ptr_type_expr
+        (mut_spec)
+        (path_expr
+          (path
+            (identifier)))))
+    (global_def_item
+      (identifier)
+      (fun_expr
+        (ptr_type_expr
+          (path_expr
+            (path
+              (identifier))))))))

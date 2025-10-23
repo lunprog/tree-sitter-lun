@@ -1,0 +1,788 @@
+=============
+Bool lit expr
+=============
+
+x :: fun() {
+  true;
+  false;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (bool_expr)
+        (bool_expr)))))
+
+==========
+Paren expr
+==========
+
+x :: fun() {
+  (true);
+  (1 + 2) * 3;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (paren_expr
+          (bool_expr))
+        (binary_expr
+          (paren_expr
+            (binary_expr
+              (lit_expr
+                (integer_lit))
+              (lit_expr
+                (integer_lit))))
+          (lit_expr
+            (integer_lit)))))))
+
+=========
+Path expr
+=========
+
+x :: fun() {
+  orb::a::b;
+  hello::world;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (path_expr
+          (path
+            (identifier)
+            (identifier)))
+        (path_expr
+          (path
+            (identifier)
+            (identifier)))))))
+
+===========
+Binary expr
+===========
+
+x :: fun() {
+  2 + 3;
+  2 - 3;
+  2 * 3;
+  2 / 3;
+  2 % 3;
+  2 < 3;
+  2 <= 3;
+  2 > 3;
+  2 >= 3;
+  2 == 3;
+  2 != 3;
+  2 = 3;
+  2 && 3;
+  2 || 3;
+  2 & 3;
+  2 ^ 3;
+  2 | 3;
+  2 >> 3;
+  2 << 3;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (assign_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))
+        (binary_expr
+          (lit_expr
+            (integer_lit))
+          (lit_expr
+            (integer_lit)))))))
+
+==========
+Unary expr
+==========
+
+x :: fun() {
+  -1;
+  !true;
+  hello.*;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (left_unary_expr
+          (lit_expr
+            (integer_lit)))
+        (left_unary_expr
+          (bool_expr))
+        (right_unary_expr
+          (path_expr
+            (path
+              (identifier))))))))
+
+===========
+Borrow expr
+===========
+
+x :: fun() {
+  &hello;
+  &mut hello;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (borrow_expr
+          (path_expr
+            (path
+              (identifier))))
+        (borrow_expr
+          (mut_spec)
+          (path_expr
+            (path
+              (identifier))))))))
+
+=========
+Call expr
+=========
+
+x :: fun() {
+  print();
+  print(1);
+  print(1,);
+  print(1, 2);
+  print(1, 2,);
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (call_expr
+          (path_expr
+            (path
+              (identifier)))
+          (call_args))
+        (call_expr
+          (path_expr
+            (path
+              (identifier)))
+          (call_args
+            (lit_expr
+              (integer_lit))))
+        (call_expr
+          (path_expr
+            (path
+              (identifier)))
+          (call_args
+            (lit_expr
+              (integer_lit))))
+        (call_expr
+          (path_expr
+            (path
+              (identifier)))
+          (call_args
+            (lit_expr
+              (integer_lit))
+            (lit_expr
+              (integer_lit))))
+        (call_expr
+          (path_expr
+            (path
+              (identifier)))
+          (call_args
+            (lit_expr
+              (integer_lit))
+            (lit_expr
+              (integer_lit))))))))
+
+=======
+If expr
+=======
+
+x :: fun() {
+  if a {}
+  if b {} else {}
+  if c {} else if d {} else {}
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (if_expr
+          (path_expr
+            (path
+              (identifier)))
+          (block))
+        (if_expr
+          (path_expr
+            (path
+              (identifier)))
+          (block)
+          (block))
+        (if_expr
+          (path_expr
+            (path
+              (identifier)))
+          (block)
+          (if_expr
+            (path_expr
+              (path
+                (identifier)))
+            (block)
+            (block)))))))
+
+==========
+Block expr
+==========
+
+x :: fun() {
+  { 1 }
+  { a; 1 }
+  blk: { 1 }
+  blk: { a; 1 }
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (block_expr
+          (block
+            (lit_expr
+              (integer_lit))))
+        (block_expr
+          (block
+            (path_expr
+              (path
+                (identifier)))
+            (lit_expr
+              (integer_lit))))
+        (labeled_expr
+          (identifier)
+          (block
+            (lit_expr
+              (integer_lit))))
+        (labeled_expr
+          (identifier)
+          (block
+            (path_expr
+              (path
+                (identifier)))
+            (lit_expr
+              (integer_lit))))))))
+
+==========
+While expr
+==========
+
+x :: fun() {
+  while a {}
+  lp: while b {}
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (while_expr
+          (path_expr
+            (path
+              (identifier)))
+          (block))
+        (labeled_expr
+          (identifier)
+          (while_expr
+            (path_expr
+              (path
+                (identifier)))
+            (block)))))))
+
+========
+For expr
+========
+
+x :: fun() {
+  for a in b {}
+  lp: for c in d {}
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (for_expr
+          (identifier)
+          (path_expr
+            (path
+              (identifier)))
+          (block))
+        (labeled_expr
+          (identifier)
+          (for_expr
+            (identifier)
+            (path_expr
+              (path
+                (identifier)))
+            (block)))))))
+
+=========
+Loop expr
+=========
+
+x :: fun() {
+  loop {}
+  lp: loop {}
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (loop_expr
+          (block))
+        (labeled_expr
+          (identifier)
+          (loop_expr
+            (block)))))))
+
+===========
+Return expr
+===========
+
+x :: fun() {
+  return;
+  return 1;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (return_expr)
+        (return_expr
+          (lit_expr
+            (integer_lit)))))))
+
+==========
+Break expr
+==========
+
+x :: fun() {
+  break;
+  break :lab;
+  break :lab 1;
+  break 1;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (break_expr)
+        (break_expr
+          (identifier))
+        (break_expr
+          (identifier)
+          (lit_expr
+            (integer_lit)))
+        (break_expr
+          (lit_expr
+            (integer_lit)))))))
+
+=============
+Continue expr
+=============
+
+x :: fun() {
+  conitnue;
+  continue :a;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (path_expr
+          (path
+            (identifier)))
+        (continue_expr
+          (identifier))))))
+
+=========
+Null expr
+=========
+
+x :: fun() {
+  null;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (null_expr)))))
+
+==========
+Field expr
+==========
+
+x :: fun() {
+  a.b;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (field_expr
+          (path_expr
+            (path
+              (identifier)))
+          (identifier))))))
+
+=============
+Fun def expr
+=============
+
+x1 :: fun(a: u32) {}
+x2 :: fun(b: u32,) {}
+x3 :: fun(c: u32, d: u8) {}
+x4 :: fun(e: u32, f: u8,) {}
+x5 :: fun(g: u32) -> u8 {}
+x6 :: fun(h: u32,) -> u8 {}
+x7 :: fun(i: u32, j: u8) -> u8 {}
+x8 :: fun(k: u32, l: u8,) -> u8 {}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (block)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (block)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (block)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (block)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (primitive_type)
+      (block)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (primitive_type)
+      (block)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (primitive_type)
+      (block)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (fun_arg
+        (identifier)
+        (primitive_type))
+      (primitive_type)
+      (block))))
+
+=============
+Fun decl expr
+=============
+
+x1 :: fun(u32);
+x2 :: fun(u32,);
+x3 :: fun(u32, u8);
+x4 :: fun(u32, u8,);
+x5 :: fun(u32) -> u8;
+x6 :: fun(u32,) -> u8;
+x7 :: fun(u32, u8) -> u8;
+x8 :: fun(u32, u8,) -> u8;
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)
+      (primitive_type)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)
+      (primitive_type)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)
+      (primitive_type)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)
+      (primitive_type)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)
+      (primitive_type)
+      (primitive_type)))
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (primitive_type)
+      (primitive_type)
+      (primitive_type))))
+
+=============
+Ptr type expr
+=============
+
+x :: fun() {
+  *usz;
+  *mut usz;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (ptr_type_expr
+          (primitive_type))
+        (ptr_type_expr
+          (mut_spec)
+          (primitive_type))))))
+
+================
+Funptr type expr
+================
+
+x :: fun() {
+  *fun();
+  *fun(u8);
+  *fun(u8,);
+  *fun() -> never;
+  *fun(u8) -> never;
+  *fun(u8,) -> never;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (funptr_type_expr)
+        (funptr_type_expr
+          (primitive_type))
+        (funptr_type_expr
+          (primitive_type))
+        (funptr_type_expr
+          (primitive_type))
+        (funptr_type_expr
+          (primitive_type)
+          (primitive_type))
+        (funptr_type_expr
+          (primitive_type)
+          (primitive_type))))))

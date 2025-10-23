@@ -1,0 +1,40 @@
+=============
+Mod directive
+=============
+
+#mod test;
+
+---
+
+(orb
+  (mod_directive
+    (identifier)))
+
+================
+Import directive
+================
+
+#import a;
+#import a::b;
+#import a as b;
+#import a::b as c;
+
+---
+
+(orb
+  (import_directive
+    (path
+      (identifier)))
+  (import_directive
+    (path
+      (identifier)
+      (identifier)))
+  (import_directive
+    (path
+      (identifier))
+    (identifier))
+  (import_directive
+    (path
+      (identifier)
+      (identifier))
+    (identifier)))

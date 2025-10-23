@@ -1,0 +1,91 @@
+=====================
+Let binding statement
+=====================
+
+x :: fun() {
+  let a = 2;
+  let b: usz = 3;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (let_binding_stmt
+          (identifier)
+          (lit_expr
+            (integer_lit)))
+        (let_binding_stmt
+          (identifier)
+          (primitive_type)
+          (lit_expr
+            (integer_lit)))))))
+
+=======================
+Short binding statement
+=======================
+
+x :: fun() {
+  a := 1;
+  b : usz = 2;
+  mut c := 3;
+  mut d : usz = 4;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (short_binding_stmt
+          (identifier)
+          (lit_expr
+            (integer_lit)))
+        (short_binding_stmt
+          (identifier)
+          (primitive_type)
+          (lit_expr
+            (integer_lit)))
+        (short_binding_stmt
+          (mut_spec)
+          (identifier)
+          (lit_expr
+            (integer_lit)))
+        (short_binding_stmt
+          (mut_spec)
+          (identifier)
+          (primitive_type)
+          (lit_expr
+            (integer_lit)))))))
+
+===============
+Defer statement
+===============
+
+x :: fun() {
+  defer 1;
+  defer {}
+  defer {};
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (defer_stmt
+          (lit_expr
+            (integer_lit)))
+        (defer_stmt
+          (block_expr
+            (block)))
+        (defer_stmt
+          (block_expr
+            (block)))))))

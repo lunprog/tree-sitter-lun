@@ -1,0 +1,263 @@
+===============
+Integer literal
+===============
+
+x :: fun() {
+  999;
+  9_9_9;
+  200'usz;
+
+  0b100;
+  0B100;
+  0b1_0_0;
+  0B1_0_0;
+  0b101'u8;
+
+  0o700;
+  0O700;
+  0o7_0_0;
+  0O7_0_0;
+  0o555'i8;
+
+  0xDEAD;
+  0XDEAD;
+  0xDEAD_BEEF;
+  0Xdead_beef;
+  0xdead'u16;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))
+        (lit_expr
+          (integer_lit))))))
+
+=============
+Dec float lit
+=============
+
+x :: fun() {
+  12.;
+  12.3;
+  12.3e4;
+  12.3e+4;
+  12.3e-4;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (lit_expr
+          (decimal_float_lit))
+        (lit_expr
+          (decimal_float_lit))
+        (lit_expr
+          (decimal_float_lit))
+        (lit_expr
+          (decimal_float_lit))
+        (lit_expr
+          (decimal_float_lit))))))
+
+=============
+Hex float lit
+=============
+
+x :: fun() {
+  0xdead.beef;
+  0xdead.beefP9;
+  0xdead.beefP+9;
+  0xdead.beefP-9;
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (field_expr
+          (lit_expr
+            (integer_lit))
+          (identifier))
+        (lit_expr
+          (hex_float_lit))
+        (lit_expr
+          (hex_float_lit))
+        (lit_expr
+          (hex_float_lit))))))
+
+========
+Char lit
+========
+
+x :: fun() {
+  '\0';
+  '\n';
+  '\r';
+  '\t';
+  '\v';
+  '\a';
+  '\b';
+  '\e';
+  '\\';
+  // '\'';
+  '\xFF';
+  '\u{DEADBEEF}';
+  'a';
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (comment)
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit
+            (escape_sequence)))
+        (lit_expr
+          (char_lit))))))
+
+==========
+String lit
+==========
+
+x :: fun() {
+  "\0";
+  "\n";
+  "\r";
+  "\t";
+  "\v";
+  "\a";
+  "\b";
+  "\e";
+  "\\";
+  // "\"";
+  "\xFF";
+  "\u{DEADBEEF}";
+  "a";
+  "hello world";
+}
+
+---
+
+(orb
+  (global_def_item
+    (identifier)
+    (fun_expr
+      (block
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (comment)
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (escape_sequence)))
+        (lit_expr
+          (string_lit
+            (string_content)))
+        (lit_expr
+          (string_lit
+            (string_content)))))))
