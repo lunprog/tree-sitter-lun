@@ -583,7 +583,7 @@ x :: fun() {
           (path_expr
             (path
               (identifier)))
-          (identifier))))))
+          (field_identifier))))))
 
 =============
 Fun def expr

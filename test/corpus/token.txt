@@ -121,7 +121,7 @@ x :: fun() {
         (field_expr
           (lit_expr
             (integer_lit))
-          (identifier))
+          (field_identifier))
         (lit_expr
           (hex_float_lit))
         (lit_expr
@@ -183,7 +183,7 @@ x :: fun() {
         (lit_expr
           (char_lit
             (escape_sequence)))
-        (comment)
+        (line_comment)
         (lit_expr
           (char_lit
             (escape_sequence)))
@@ -248,7 +248,7 @@ x :: fun() {
         (lit_expr
           (string_lit
             (escape_sequence)))
-        (comment)
+        (line_comment)
         (lit_expr
           (string_lit
             (escape_sequence)))
