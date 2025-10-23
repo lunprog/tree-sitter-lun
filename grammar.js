@@ -434,6 +434,8 @@ module.exports = grammar({
     _literal: $ => choice(
       $.integer_lit,
       $.string_lit,
+      $.char_lit,
+      $._float_lit,
     ),
 
     integer_lit: _ => token(seq(
@@ -445,6 +447,40 @@ module.exports = grammar({
       ),
       field('tag', optional(seq("'", /[a-zA-Z0-9_]+/)))
     )),
+
+    _float_lit: $ => choice(
+      $.decimal_float_lit,
+      $.hex_float_lit
+    ),
+
+    decimal_float_lit: $ => token(choice(
+      // digits "." [digits] [exponent]
+      /[0-9_]+(?:[0-9_]+)*\.(?:[0-9_]+(?:[0-9_]+)*)?(?:[eE][+-]?[0-9_]+(?:[0-9_]+)*)?/,
+
+      // "." digits [exponent]
+      /\.(?:[0-9_]+(?:[0-9_]+)*)(?:[eE][+-]?[0-9_]+(?:[0-9_]+)*)?/,
+
+      // digits exponent
+      /[0-9]+(?:[0-9_]+)*[eE][+-]?[0-9_]+(?:_[0-9_]+)*/
+    )),
+
+    // hex_float_lit = ("0x" | "0X") hex_mantissa hex_exponent ;
+    // hex_mantissa = ["_"] hex_digits "." [hex_digits]
+    //   | ["_"] hex_digits
+    //   | "." hex_digits ;
+    // hex_exponent = ("p" | "P") ["+" | "-"] decimal_digits ;
+    hex_float_lit: $ => token(
+      /0[xX](?:_?[0-9A-Fa-f_]+\.[0-9A-Fa-f_]*|_?[0-9A-Fa-f_]+|\.[0-9A-Fa-f_]+)[pP][+-]?[0-9_]+/
+    ),
+
+    char_lit: $ => seq(
+      /\w*'/,
+      choice(
+        token.immediate(/\w/),
+        $.escape_sequence,
+      ),
+      /'/,
+    ),
 
     string_lit: $ => seq(
       field('tag', optional($.identifier)),

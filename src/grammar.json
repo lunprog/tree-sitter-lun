@@ -2109,6 +2109,14 @@
         {
           "type": "SYMBOL",
           "name": "string_lit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "char_lit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_float_lit"
         }
       ]
     },
@@ -2165,6 +2173,75 @@
           }
         ]
       }
+    },
+    "_float_lit": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "decimal_float_lit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "hex_float_lit"
+        }
+      ]
+    },
+    "decimal_float_lit": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[0-9_]+(?:[0-9_]+)*\\.(?:[0-9_]+(?:[0-9_]+)*)?(?:[eE][+-]?[0-9_]+(?:[0-9_]+)*)?"
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\.(?:[0-9_]+(?:[0-9_]+)*)(?:[eE][+-]?[0-9_]+(?:[0-9_]+)*)?"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[0-9]+(?:[0-9_]+)*[eE][+-]?[0-9_]+(?:_[0-9_]+)*"
+          }
+        ]
+      }
+    },
+    "hex_float_lit": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "0[xX](?:_?[0-9A-Fa-f_]+\\.[0-9A-Fa-f_]*|_?[0-9A-Fa-f_]+|\\.[0-9A-Fa-f_]+)[pP][+-]?[0-9_]+"
+      }
+    },
+    "char_lit": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\w*'"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "IMMEDIATE_TOKEN",
+              "content": {
+                "type": "PATTERN",
+                "value": "\\w"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "escape_sequence"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "'"
+        }
+      ]
     },
     "string_lit": {
       "type": "SEQ",
