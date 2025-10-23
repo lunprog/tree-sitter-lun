@@ -51,8 +51,9 @@ module.exports = grammar({
   word: $ => $.identifier,
 
   conflicts: $ => [
-    // TODO: this maybe kind of an hack, but it works.
-    [$._expression, $._statement],
+    [$._expression, $._expr_stmt],
+    [$._expr_with_block_no_label, $.labeled_expr],
+    [$.block_expr, $.labeled_expr],
   ],
 
   rules: {
@@ -111,9 +112,11 @@ module.exports = grammar({
     ),
 
     _expr_with_block_no_label: $ => choice(
+      $.if_expr,
       $.block_expr,
       $.while_expr,
       $.loop_expr,
+      $.fun_expr,
     ),
 
     _expr_with_block: $ => choice(
@@ -147,12 +150,12 @@ module.exports = grammar({
       $.right_unary_expr,
       $.borrow_expr,
       $.call_expr,
-      $.if_expr,
       $.return_expr,
       $.break_expr,
       $.continue_expr,
       $.null_expr,
       $.field_expr,
+      $.ptr_type_expr,
     ),
 
     bool_expr: _ => choice(
@@ -160,10 +163,7 @@ module.exports = grammar({
       'false',
     ),
 
-    lit_expr: $ => choice(
-      $.integer_lit,
-      $.string_lit,
-    ),
+    lit_expr: $ => $._literal,
 
     paren_expr: $ => seq(
       '(',
@@ -223,11 +223,11 @@ module.exports = grammar({
       $._expression,
     )),
 
-    arguments: $ => seq('(', sep($._expression, ','), ')'),
+    call_args: $ => seq('(', sep($._expression, ','), ')'),
 
     call_expr: $ => prec.left(PREC.call, seq(
       field('callee', $._expression),
-      field('args', $.arguments),
+      field('args', $.call_args),
     )),
 
     if_expr: $ => prec.left(seq(
@@ -293,14 +293,43 @@ module.exports = grammar({
 
     null_expr: _ => 'null',
 
-    fundef_expr: $ => seq(
-      'fun',
+    fun_arg: $ => seq(
+      field('name', $.identifier),
+      ':',
+      field('typeexpr', $._typeexpr)
     ),
 
     field_expr: $ => seq(
       $._expression,
       '.',
       field('field', $.identifier),
+    ),
+
+    fun_expr: $ => choice(
+      prec.right(
+        PREC.primary,
+        seq(
+          'fun',
+          '(',
+          field('args', fun_args($.fun_arg)),
+          ')',
+          field('ret_typeexpr', optional(seq('->', $._typeexpr))),
+          field('body', $.block),
+        )
+      ),
+      prec(-1, seq(
+        'fun',
+        '(',
+        field('args', fun_args($.fun_arg)),
+        ')',
+        field('ret_typeexpr', optional(seq('->', $._typeexpr))),
+      )),
+    ),
+
+    ptr_type_expr: $ => seq(
+      '*',
+      optional($.mut_spec),
+      $._typeexpr,
     ),
 
     block: $ => seq(
@@ -311,8 +340,39 @@ module.exports = grammar({
     ),
 
     _statement: $ => choice(
+      $._expr_stmt,
+      $.short_binding_stmt,
+      $.let_binding_stmt,
+      $.defer_stmt,
+    ),
+
+    _expr_stmt: $ => choice(
       seq($._expr_without_block, ';'),
-      $._expr_with_block,
+      seq($._expr_with_block, optional(';')),
+    ),
+
+    short_binding_stmt: $ => seq(
+      optional($.mut_spec),
+      field('name', $.identifier),
+      ':',
+      field('typeexpr', optional($._typeexpr)),
+      '=',
+      field('value', $._expr_stmt),
+    ),
+
+    let_binding_stmt: $ => seq(
+      'let',
+      optional($.mut_spec),
+      field('name', $.identifier),
+      field('typeexpr', optional(seq(':', $._typeexpr))),
+      '=',
+      field('value', $._expression),
+      ';',
+    ),
+
+    defer_stmt: $ => seq(
+      'defer',
+      $._expr_stmt,
     ),
 
     // http://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment/36328890#36328890
@@ -322,6 +382,11 @@ module.exports = grammar({
       // block comment
       seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/' ),
     )),
+
+    _literal: $ => choice(
+      $.integer_lit,
+      $.string_lit,
+    ),
 
     integer_lit: _ => token(seq(
       choice(
@@ -397,4 +462,17 @@ function sep1(rule, separator) {
  */
 function sep(rule, separator) {
   return optional(sep1(rule, separator));
+}
+
+/**
+ * @param {Rule} fun_arg
+ * @returns {SeqRule}
+*/
+function fun_args(fun_arg) {
+  return seq(
+    sep(
+      seq(fun_arg),
+      ','
+    ),
+  )
 }
