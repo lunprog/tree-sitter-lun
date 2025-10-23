@@ -9,6 +9,9 @@
       "file-types": [
         "lun"
       ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
       "injection-regex": "^lun$",
       "class-name": "TreeSitterLun"
     }

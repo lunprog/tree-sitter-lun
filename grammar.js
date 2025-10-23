@@ -45,7 +45,8 @@ module.exports = grammar({
 
   extras: ($) => [
     /\s/, // whitespace
-    $.comment,
+    $.line_comment,
+    $.block_comment,
   ],
 
   word: $ => $.identifier,
@@ -54,6 +55,23 @@ module.exports = grammar({
     [$._expression, $._expr_stmt],
     [$._expr_with_block_no_label, $.labeled_expr],
     [$.block_expr, $.labeled_expr],
+  ],
+
+  inline: $ => [
+    $._field_identifier,
+  ],
+
+  supertypes: $ => [
+    $._expression,
+    $._expr_without_block,
+    $._typeexpr,
+    $._literal,
+    $._item,
+    $._directive,
+
+    // NOTE: this maybe a HACK but without the following, the highlights.scm
+    // stops working.
+    $._float_lit,
   ],
 
   rules: {
@@ -348,7 +366,7 @@ module.exports = grammar({
     field_expr: $ => seq(
       $._expression,
       '.',
-      field('field', $.identifier),
+      field('field', $._field_identifier),
     ),
 
     fun_expr: $ => choice(
@@ -435,12 +453,9 @@ module.exports = grammar({
     // TOKEN lexing
 
     // http://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment/36328890#36328890
-    comment: _ => token(choice(
-      // line comment
-      seq('//', /(\\+(.|\r?\n)|[^\\\n])*/),
-      // block comment
-      seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/' ),
-    )),
+    line_comment: _ => seq('//', /(\\+(.|\r?\n)|[^\\\n])*/),
+
+    block_comment: _ => seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/' ),
 
     _literal: $ => choice(
       $.integer_lit,
@@ -467,7 +482,7 @@ module.exports = grammar({
       $.hex_float_lit
     ),
 
-    decimal_float_lit: $ => token(choice(
+    decimal_float_lit: _ => token(choice(
       // digits "." [digits] [exponent]
       /[0-9_]+(?:[0-9_]+)*\.(?:[0-9_]+(?:[0-9_]+)*)?(?:[eE][+-]?[0-9_]+(?:[0-9_]+)*)?/,
 
@@ -483,7 +498,7 @@ module.exports = grammar({
     //   | ["_"] hex_digits
     //   | "." hex_digits ;
     // hex_exponent = ("p" | "P") ["+" | "-"] decimal_digits ;
-    hex_float_lit: $ => token(
+    hex_float_lit: _ => token(
       /0[xX](?:_?[0-9A-Fa-f_]+\.[0-9A-Fa-f_]*|_?[0-9A-Fa-f_]+|\.[0-9A-Fa-f_]+)[pP][+-]?[0-9_]+/
     ),
 
@@ -530,6 +545,15 @@ module.exports = grammar({
     )),
 
     mut_spec: _ => "mut",
+
+    // Identifiers
+
+    _field_identifier: $ => alias($.identifier, $.field_identifier),
+
+    _weak_kw: $ => alias(choice(
+      'import',
+      'mod',
+    ), $.identifier),
 
     identifier: _ => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
   }
