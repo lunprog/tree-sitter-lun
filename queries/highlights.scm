@@ -9,12 +9,13 @@
 
 ; --- Literals ---
 
-(char_lit) @string
+(char_lit) @constant.character
 (string_lit) @string
 (escape_sequence) @escape
 
-(integer_lit) @number
-(_float_lit) @number
+(integer_lit) @constant.numeric.integer
+(_float_lit) @constant.numeric.float
+(bool_expr) @constant.builtin.boolean
 
 ; --- Function ---
 
