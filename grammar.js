@@ -453,8 +453,11 @@ module.exports = grammar({
       choice(
         /[0-9][0-9_]*/,
         /0b[01_]+/,
+        /0B[01_]+/,
         /0o[0-7_]+/,
-        /0x[0-9a-fA-F]+/,
+        /0O[0-7_]+/,
+        /0x[0-9a-fA-F_]+/,
+        /0X[0-9a-fA-F_]+/,
       ),
       field('tag', optional(seq("'", /[a-zA-Z0-9_]+/)))
     )),
